@@ -16,7 +16,23 @@ class DatacenterController extends Controller
     public function index()
     {
         //
+        $data =  Datacenter::latest()->get();
+        return view('datacenter', ['data'=>$data]);
+
+        
     }
+    public function getall()
+    {
+        //
+        $data =  Datacenter::latest()->get();
+        return $data;
+
+        
+    }
+    // public function view()
+    // {
+    //     return view('datacenter');
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -29,6 +45,23 @@ class DatacenterController extends Controller
         $data->humidity=$request->humidity;
         $data->save();
         return  "Data Berhasil Masuk";
+    }
+    // Get Latest Data
+    Public function getlast(){
+        // $data = Datacenter::latest()->get();
+        // $data = Datacenter::where('active', 0)->latest();
+        // return Datacenter::table('temperature')->latest('updated_at')->first();
+        // return $data;
+        $max= Datacenter::orderBy('id','DESC')->max('id');
+        // dd($max);
+        $data = Datacenter::where('id',$max)->orderBy('id', 'DESC')->get();
+        // $data = Datacenter::latest();
+        // $data = Datacenter::where('active', 0)->latest();
+        return response()->json(['data' => $data]);
+    }
+    Public function geturut(){
+        $data = Datacenter::latest()->get();
+        return response()->json(['data' => $data]);
     }
 
     /**

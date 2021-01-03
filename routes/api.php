@@ -13,13 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-
-Route::middleware('auth:api')->get('/user',function(Request $request){
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
 Route::GET('ambilData','MahasiswaController@index');
+Route::GET('getlast','DatacenterController@getlast');
+Route::GET('getall','DatacenterController@getall');
+Route::GET('geturut','DatacenterController@geturut');
 Route::POST('inputData','MahasiswaController@create');
 Route::POST('inputDC','DatacenterController@create');
+Route::POST('inputUPS','DataUPSController@create');
 Route::PUT('/mahasiswa/{id}','MahasiswaController@update');
 Route::DELETE('/mahasiswa/{id}','MahasiswaController@delete');

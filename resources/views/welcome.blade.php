@@ -15,22 +15,28 @@
 
 		<!-- Header -->
 			<header id="header">
-				<div class="inner">
-					<a href="index.html" class="logo"><strong>Kreasi</strong>Teknologi</a>
-					<nav id="nav">
-						<a href="index.html">Home</a>
-						<a href="generic.html">Generic</a>
-						<a href="elements.html">Elements</a>
-					</nav>
-					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-				</div>
-			</header>
+				<div class="flex-center position-ref full-height">
+					@if (Route::has('login'))
+						<div class="top-right links">
+							@auth
+								<a href="{{ url('/home') }}">Home</a>
+							@else
+								<a href="{{ route('login') }}"><button>Login</button></a>
+
+								@if (Route::has('register'))
+									<a href="{{ route('register') }}"><button>Register</button></a>
+								@endif
+							@endauth
+						</div>
+					@endif
+
+				</header>
 
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
 					<header>
-						<h1>Welcome to Projection</h1>
+						<h1>Welcome to Project</h1>
 					</header>
 
 					<div class="flex ">

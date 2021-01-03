@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/datacenter', 'DatacenterController@index')->name('datacenter');
+Route::get('/dataups', 'DataUPSController@index')->name('dataups');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
