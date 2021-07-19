@@ -25,5 +25,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/datacenter', 'DatacenterController@index')->name('datacenter');
 Route::get('/dataups', 'DataUPSController@index')->name('dataups');
+Route::get('/genset', 'GensetController@index')->name('genset');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 

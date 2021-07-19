@@ -79,7 +79,7 @@
                                 <i class="fas fa-table"></i>UPS Room</a>
                         </li>
                         <li>
-                            <a href="form.html">
+                            <a href="{{ route('genset') }}">
                                 <i class="far fa-check-square"></i>Genset</a>
                         </li>
                         <li>

@@ -14,7 +14,8 @@ class GensetController extends Controller
      */
     public function index()
     {
-        //
+        $data = genset::latest()->get();
+        return view('genset',['data'=>$data]);
     }
 
     
