@@ -25,5 +25,6 @@ Route::GET('geturut','DatacenterController@geturut');
 Route::POST('inputData','MahasiswaController@create');
 Route::POST('inputDC','DatacenterController@create');
 Route::POST('inputUPS','DataUPSController@create');
+Route::POST('inputGenset','GensetController@create');
 Route::PUT('/mahasiswa/{id}','MahasiswaController@update');
 Route::DELETE('/mahasiswa/{id}','MahasiswaController@delete');
